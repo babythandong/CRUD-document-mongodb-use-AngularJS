@@ -1,0 +1,19 @@
+<div class="row" ng-controller="ArticleEditCtrl">
+    <h3 style="text-align: left">Edit Article</h3>
+    <form ng-submit="addArticle()">
+        <div class="form-group">
+            <input class="form-control" value="{{article.title}}" type="text" ng-model="article.title">
+        </div>
+        <div class="form-group">
+            <select ng-model="article.category" class="form-control">
+                <option ng-repeat="category in categories" value="{{category.name}}" >{{category.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea data-ck-editor placeholder="Enter Content" ng-model="article.body"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary large" value="Update Article">
+        </div>
+    </form>
+</div>

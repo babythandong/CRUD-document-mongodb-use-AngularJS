@@ -1,0 +1,22 @@
+<h3 class="heading">Lastest Articles</h3>
+<div ng-controller="ArticlesCtrl">
+    <a href="#/categories">Go back</a>
+    <div class="row">
+        <div class="alert alert-success" ng-show="msgbox">{{msg}}</div>
+    </div>
+    <div class="row">
+        <div class="articles">
+            <div ng-repeat="article in articles">
+                <div class="col-md-12">
+                    <h3>{{article.title}}</h3>
+                    <p>{{article.body|limitTo:100}}</p>
+                    <a class="btn btn-default" href="#/articles/details/{{article._id}}">View Articles</a>
+                    <a href="#/articles/edit/{{article._id}}" class="btn btn-warning">Edit</a>
+                    <a ng-click="removeArticle(article)" class="btn btn-danger">Remove</a>
+                </div>
+                <hr/>
+            </div>
+
+        </div>
+    </div>
+</div>
